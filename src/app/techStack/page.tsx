@@ -113,12 +113,12 @@ export default function TechStack() {
             <div className='w-[70%]  bg-slate-100x'>
                 <div className="flex-col flex gap-10 ">
                     <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">My Tech Stack</h1>
-                    <h2 className='text-[#666666] justify-center text-xl'>{'Technologies I’ve been working with recently'}</h2>
+                    <h2 className='text-[#666666] justify-center text-xl'>{`Technologies I’ve been working with recently`}</h2>
                 </div>
                 <div className="grid grid-cols-6 gap-20 content-start mt-24 ">
                     {
                         skilsData.map((item: any) =>(
-                            <Link href={item.link} className="flex items-center justify-center duration-300 hover:scale-110 ">
+                            <Link key={item.id} href={item.link} className="flex items-center justify-center duration-300 hover:scale-110 ">
                                 <img className='w-28 h-28 ' src={item.icone}/>
                             </Link>
                         ))

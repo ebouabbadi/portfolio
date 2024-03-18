@@ -42,14 +42,14 @@ export default function About() {
             <div className='w-[70%]  bg-slate-100x'>
                 <div className="flex-col flex gap-10">
                     <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center"> About Me</h1>
-                    <p className='text-[#666666] text-xl'>I'm a full-stack developer deeply passionate about software engineering and personal advancement. With expertise in TypeScript, I specialize in architecting scalable solutions, harnessing React.js and Next.js for frontend experiences. Delving into backend development, I excel in crafting modular architecture with Nest.js and Node.js, fortified by robust.</p>
+                    <p className='text-[#666666] text-xl'>{'I am a full-stack developer deeply passionate about software engineering and personal advancement. With expertise in TypeScript, I specialize in architecting scalable solutions, harnessing React.js and Next.js for frontend experiences. Delving into backend development, I excel in crafting modular architecture with Nest.js and Node.js, fortified by robust.'}</p>
                 </div>
             </div>
             <div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col'>
                 <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">Education</h1>
                 {
                     EducationData.map((item: any) => (
-                        <div className="flex-col flex gap-14 ">
+                        <div key={item.id} className="flex-col flex gap-14 ">
                             <div className='flex justify-between '>
                                 <div className="flex flex-col gap-4 ">
                                     <h1 className='text-[#666666] text-3xl'>{item.filier}</h1>
@@ -72,7 +72,7 @@ export default function About() {
                 <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">Certifications</h1>
                 {
                     certificationsData.map((item: any) => (
-                        <div className="flex-col flex gap-14 ">
+                        <div key={item.id} className="flex-col flex gap-14 ">
                             <div className='flex justify-between '>
                                 <div className="flex flex-col gap-4 ">
                                     <h1 className='text-[#666666] text-3xl'>{item.name}</h1>
