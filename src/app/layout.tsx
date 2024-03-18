@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/navBar";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "ebouabbadi",
@@ -13,9 +14,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // const [dark, setDark] = useState(false); 
+
   return (
     <html lang="en">
-      <body>
+      <body className=" darkh:bg-blue-4h00">
        <NavBar/>
         {children}
         </body>

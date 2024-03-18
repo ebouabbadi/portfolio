@@ -1,3 +1,5 @@
+'use client'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
 
@@ -39,13 +41,43 @@ const certificationsData = [
 export default function About() {
     return (
         <div className=' w-full flex flex-col justify-center items-center gap-16 mt-32 '>
-            <div className='w-[70%]  bg-slate-100x'>
+            <motion.div className='w-[70%]  bg-slate-100x'
+
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.3,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                        type: "spring",
+                        damping: 20,
+                        stiffness: 100,
+                        restDelta: 0.001
+                    }
+                }}
+
+            >
                 <div className="flex-col flex gap-10">
                     <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center"> About Me</h1>
                     <p className='text-[#666666] text-xl'>{'I am a full-stack developer deeply passionate about software engineering and personal advancement. With expertise in TypeScript, I specialize in architecting scalable solutions, harnessing React.js and Next.js for frontend experiences. Delving into backend development, I excel in crafting modular architecture with Nest.js and Node.js, fortified by robust.'}</p>
                 </div>
-            </div>
-            <div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col'>
+            </motion.div>
+            <motion.div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col'
+
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.3,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                        type: "spring",
+                        damping: 20,
+                        stiffness: 100,
+                        restDelta: 0.001
+                    }
+                }}
+
+            >
                 <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">Education</h1>
                 {
                     EducationData.map((item: any) => (
@@ -67,8 +99,22 @@ export default function About() {
 
                     ))
                 }
-            </div>
-            <div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col'>
+            </motion.div>
+            <motion.div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col'
+
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.3,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                        type: "spring",
+                        damping: 20,
+                        stiffness: 100,
+                        restDelta: 0.001
+                    }
+                }}
+            >
                 <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">Certifications</h1>
                 {
                     certificationsData.map((item: any) => (
@@ -89,7 +135,7 @@ export default function About() {
 
                     ))
                 }
-            </div>
+            </motion.div>
         </div>
     )
 }

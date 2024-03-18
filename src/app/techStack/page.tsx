@@ -1,3 +1,5 @@
+'use client'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
 
@@ -115,12 +117,27 @@ export default function TechStack() {
                     <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">My Tech Stack</h1>
                     <h2 className='text-[#666666] justify-center text-xl'>{`Technologies I’ve been working with recently`}</h2>
                 </div>
-                <div className="grid grid-cols-6 gap-20 content-start mt-24 ">
+                <div className=" flex-wrap flex w-full h-auto gap-10 justify-center mt-24 ">
                     {
                         skilsData.map((item: any) =>(
-                            <Link key={item.id} href={item.link} className="flex items-center justify-center duration-300 hover:scale-110 ">
+                            <motion.div   key={item.id}
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                              duration: 0.3,
+                              ease: [0, 0.71, 0.2, 1.01],
+                              scale: {
+                                type: "spring",
+                                damping: 20,
+                                stiffness: 100,
+                                restDelta: 0.001
+                              }
+                            }}
+                            >
+                            <Link href={item.link} className="flex items-center justify-center duration-300 hover:scale-110 ">
                                 <img className='w-28 h-28 ' src={item.icone}/>
                             </Link>
+                            </motion.div>
                         ))
                     }
                 </div>
