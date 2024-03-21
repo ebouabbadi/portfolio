@@ -58,7 +58,7 @@ export default function About() {
 
             >
                 <div className="flex-col flex gap-10">
-                    <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center"> About Me</h1>
+                    <h1 className=" hover:scale-110 text-[#42446E]  text-5xl font-bold flex justify-center"> About Me</h1>
                     <p className='text-[#666666] text-xl'>{'I am a full-stack developer deeply passionate about software engineering and personal advancement. With expertise in TypeScript, I specialize in architecting scalable solutions, harnessing React.js and Next.js for frontend experiences. Delving into backend development, I excel in crafting modular architecture with Nest.js and Node.js, fortified by robust.'}</p>
                 </div>
             </motion.div>

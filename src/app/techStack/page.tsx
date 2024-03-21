@@ -136,7 +136,7 @@ export default function TechStack() {
                             }}
                             >
                             <Link href={item.link} className="flex items-center justify-center duration-300 hover:scale-110 ">
-                                <Image loading='lazy' width={80} height={80} alt='dd'  className='' src={item.icone}/>
+                                <Image loading='lazy' width={100} height={100} alt='dd'  className='' src={item.icone}/>
                             </Link>
                             </motion.div>
                         ))
