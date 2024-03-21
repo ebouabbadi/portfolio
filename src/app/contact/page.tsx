@@ -25,7 +25,7 @@ export default function Contact() {
     >
        <div className="flex-col flex gap-10 mt-36 ">
             <h1 className="text-[#1E0E62]  text-5xl font-bold flex justify-center">For any questions please mail us:</h1>
-            <Link href={'https://ebouabbadi@gmail.com'} className="text-[#13B0F5]  text-5xl font-bold flex justify-center">ebouabbadi@gmail.com</Link>
+            <Link href={'https://ebouabbadi@gmail.com'} className="text-[#13B0F5]  text-5xl font-bold flex justify-center text-gradient">ebouabbadi@gmail.com</Link>
         </div>
     </motion.div>
     </div> )

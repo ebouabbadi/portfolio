@@ -42,7 +42,7 @@ export default function Projects() {
     <div className='w-[70%]  bg-slate-100x'>
         <div className="flex-col flex gap-10 ">
             <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">Projects</h1>
-            <h2 className='text-[#666666] justify-center text-xl'>{`Things I’ve built so far`}</h2>
+            <h2 className='text-[#666666] justify-center text-xl flex'>{`Things I’ve built so far`}</h2>
         </div>
         <div className="mt-14 bg-slafte-500 flex-wrap flex w-full h-auto gap-14 justify-center">
           {
@@ -63,7 +63,7 @@ export default function Projects() {
            }}
 
            >
-            <div className="h-[45%] bg-orange-300 rounded-t-xl"><img className='w-full h-full' src='./projectimg.png'/></div>
+            <div className="h-[45%] bg-oranfge-300 rounded-t-xl"><img className='w-full h-full' src='./projectimg.png'/></div>
             <div className="h-[55%] flex flex-col items-center "> 
               <h1 className=' font-medium text-2xl'>{item.name}</h1>
               <p className=' text-lg p-3 text-[#666666] font-light'>{item.description}</p>

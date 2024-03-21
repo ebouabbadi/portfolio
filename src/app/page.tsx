@@ -1,13 +1,16 @@
 'use client'
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 
 export default function Home() {
 
 
-  const greetings = ['Bonjour👋,', 'Hello👋,', 'Salam👋,', 'ⴰⵣⵓⵍ👋,'];
+  const greetings = ['Bonjour👋', 'Hello👋',   ' 👋سلام', 'ⴰⵣⵓⵍ👋'];
   const [currentGreetingIndex, setCurrentGreetingIndex] = useState<number>(0);
+  // const [darkMode, setDarkMode] = useState(false);
+
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -16,6 +19,12 @@ export default function Home() {
 
     return () => clearInterval(intervalId);
   }, [currentGreetingIndex, greetings.length]);
+
+
+  // const toggleDarkMode = () => {
+  //   setDarkMode((prevMode) => !prevMode);
+  // };
+
 
   return (
     <div className="h-screen w-full flex justify-center items-center">
@@ -52,14 +61,15 @@ export default function Home() {
           >{greetings[currentGreetingIndex]}</motion.h1>
 
           <h1 className="text-[#42446E]">My name is</h1>
-          <h1 className=" text-[#13B0F5]">El Mehdi Bouabbadi</h1>
+          <h1 className="text-gradient">El Mehdi Bouabbadi</h1>
           <h1 className="text-[#42446E]">Software Engineer</h1>
           <div className="flex gap-3">
-            <button>
-              <img className="" src="./contactMe.svg" />
-            </button>
-            <img className="" src="./in.svg" />
-            <img className="" src="./git.svg" />
+      
+              <Link href='/contact'><img className="" src="./contactMe.svg" /></Link>
+      
+            <a href="https://www.linkedin.com/in/ebouabbadi"><img className="" src="./in.svg" /></a>
+            <a href="https://www.github.com/ebouabbadi"><img className="" src="./git.svg" /></a>
+
           </div>
         </motion.div>
         <div className="w-[50%] flex justify-end items-center">
@@ -77,8 +87,9 @@ export default function Home() {
               }
             }}
           >
-
-            <img className="w-96 h-96 rounded-full border-8 border-blue-400" src="./Me.jpg" />
+            <div className="hj-96 w-h96 border-gradient  rounded-full">
+            <img className="h-96 w-96 rounded-full" src="./me2.png" alt="Me" />
+            </div>
           </motion.div>
         </div>
       </div>
