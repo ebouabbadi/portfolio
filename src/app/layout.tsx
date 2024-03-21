@@ -11,17 +11,15 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
   darkMode,
-  toggleDarkMode,
 }: Readonly<{
   children: React.ReactNode;
   darkMode: boolean;
-  toggleDarkMode: () => void;
 }>) {
   
   return (
     <html lang="en">
       <body className={`${darkMode ? 'dark' : ''} max-w-[2000px]`}>
-       <NavBar toggleDarkMode={toggleDarkMode}/>
+       <NavBar/>
         {children}
         </body>
     </html>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 
-export default function NavBar({toggleDarkMode}: {toggleDarkMode: () => void}) {
+export default function NavBar({}: {}) {
     const [darkMode, setDarkMode] = useState(false);
 
     
