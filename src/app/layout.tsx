@@ -10,15 +10,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  darkMode,
 }: Readonly<{
   children: React.ReactNode;
-  darkMode: boolean;
 }>) {
   
   return (
     <html lang="en">
-      <body className={`${darkMode ? 'dark' : ''} max-w-[2000px]`}>
+      <body className={` max-w-[2000px]`}>
        <NavBar/>
         {children}
         </body>
