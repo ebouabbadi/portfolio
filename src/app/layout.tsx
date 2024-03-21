@@ -16,7 +16,7 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <body className={` max-w-[2000px]`}>
+      <body className={``}>
        <NavBar/>
         {children}
         </body>
