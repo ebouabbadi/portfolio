@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/navBar";
+import { useEffect, useState } from "react";
 
 export const metadata: Metadata = {
   title: "ebouabbadi",
@@ -14,9 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   
+
   return (
     <html lang="en">
-      <body className={``}>
+      <body >
        <NavBar/>
         {children}
         </body>

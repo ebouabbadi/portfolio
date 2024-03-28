@@ -3,18 +3,15 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
-export default function NavBar({}: {}) {
-    const [darkMode, setDarkMode] = useState(false);
+export default function NavBar() {
 
-    
-    const [router, setRouter] = useState<string>();
-
+        const [router, setRouter] = useState<string>();
 
     return (
         <div className='flex justify-center'>
             <nav className="fixed w-[70%] h-20 flex justify-between text-2xl bg-slate-400x bg-white dark:bg-black">
                 <div className=" bg-red-500x w-[6%] flex justify-center">
-                    <button onClick={() => { setDarkMode((prevMode) => !prevMode)}} className='hover:scale-110 duration-500'><img src='./dark.svg' /></button>
+                    <button className='hover:scale-110 duration-500'><img src='./dark.svg' /></button>
                 </div>
                 <div className="flex gap-10 text-[#666666] font-medium w-[80%] justify-end mr-12 items-center">
                     <Link onClick={ () => setRouter('home')} className={`hover:scale-110 duration-500 ${router == 'home' ? 'text-gradient2': 'text-[#666666]' }`} href={'/'}>Home</Link>
