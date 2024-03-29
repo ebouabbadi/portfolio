@@ -89,21 +89,26 @@ const skilsData = [
     },
     {
         id: 17,
+        link: 'https://www.odoo.com/',
+        icone: '/skils/odoo.png',
+    },
+    {
+        id: 18,
         link: 'https://www.postman.com/',
         icone: '/skils/postman.png',
     },
     {
-        id: 18,
+        id: 19,
         link: 'https://www.linux.org/',
         icone: '/skils/linux.png',
     },
     {
-        id: 19,
+        id: 20,
         link: 'https://git-scm.com/',
         icone: '/skils/git.png',
     },
     {
-        id: 20,
+        id: 21,
         link: 'https://github.com/',
         icone: '/skils/github.png',
     },
