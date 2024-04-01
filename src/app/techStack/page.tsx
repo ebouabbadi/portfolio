@@ -112,6 +112,12 @@ const skilsData = [
         link: 'https://github.com/',
         icone: '/skils/github.png',
     },
+    {
+        id: 22,
+        link: 'https://www.python.org',
+        icone: '/skils/python.png',
+    },
+   
    
 ]
 

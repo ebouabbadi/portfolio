@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
 
 const projectsData = [
   {
@@ -10,18 +10,43 @@ const projectsData = [
     description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
     stack: 'js, ts, nest ...',
     link: 'https://github.com/ebouabbadi/INCEPTION',
-    img: './skils/docker.png'
+    img: './projects/inception.jpg'
   },
-  {
-    id: 2,
-    name: 'Project Tile goes here',
-    description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
-    stack: 'js, ts, nest ...',
-    link: '',
-  },
+  // {
+  //   id: 2,
+  //   name: 'Project Tile goes here',
+  //   description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
+  //   stack: 'js, ts, nest ...',
+  //   link: '',
+  // },
+
+  // {
+  //   id: 3,
+  //   name: 'Project Tile goes here',
+  //   description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
+  //   stack: 'js, ts, nest ...',
+  //   link: '',
+  // },
+  // {
+  //   id: 4,
+  //   name: 'Project Tile goes here',
+  //   description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
+  //   stack: 'js, ts, nest ...',
+  //   link: '',
+  // },
+  // {
+  //   id: 5,
+  //   name: 'Project Tile goes here',
+  //   description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
+  //   stack: 'js, ts, nest ...',
+  //   link: '',
+  // },
 ]
 
 export default function Projects() {
+
+  const [selectPj, setSelectPj] = useState(0);
+
   return (
     <div className='mt-32 w-full flex flex-col justify-center items-center'>
       <div className='w-[70%]  bg-slate-100x'>
@@ -29,10 +54,11 @@ export default function Projects() {
           <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">Projects</h1>
           <h2 className='text-[#666666] justify-center text-xl flex'>{`Things I’ve built so far`}</h2>
         </div>
-        <div className="mt-14 bg-slafte-500 flex-wrap flex w-full h-auto gap-14 justify-center">
-          {
-            projectsData.map((item: any) => (
-              <motion.div key={item.id} className='h-[500px] w-80 bg-white shadow-lg shadow-gray-200 rounded-xl flex-col'
+        {
+          !selectPj ? <div className="mt-14 bg-slafte-500 flex-wrap flex w-full h-auto gap-14 justify-center">
+            {
+              projectsData.map((item: any) => (
+                <motion.div key={item.id} className='h-[500px] w-80 bg-white shadow-lg shadow-gray-200 rounded-xl flex-col'
 
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -46,30 +72,40 @@ export default function Projects() {
                     restDelta: 0.001
                   }
                 }}
-              >
-                <div className="h-[45%] bg-oranfge-300 rounded-t-xl bg-blue-100"><img className='w-full h-full' src={item.img} /></div>
-                <div className="h-[55%] flex flex-col items-center ">
-                  <h1 className=' font-medium text-2xl'>{item.name}</h1>
-                  <p className=' text-lg p-3 text-[#666666] font-light'>{item.description}</p>
-                  <div className='flex gap-4'>
-                    <h1>teck stack: </h1>
-                    <p>{item.stack}</p>
-                  </div>
-                  <div className='flex justify-between p-4 bgf-slate-400 w-full h-full items-end'>
-                    <div className='flex space-x-2'>
-                      <img className='' src="./projects/view.svg" />
-                      <a href={''} className=' font-semibold underline'>Live Preview</a>
-                    </div>
-                    <div className='flex space-x-2'>
-                      <img className='' src="./projects/git.svg" />
-                      <a href={item.link} className=' font-semibold underline'>View Code</a>
+                >
+                  <div className="h-full w-full">
+                  <div className="h-[45%] rounded-t-xl"><img className='w-full h-full rounded-t-xl' src={item.img} /></div>
+                  <div className="h-[50%] flex flex-col items-center ">
+                    <h1 className=' font-medium text-2xl bg-slafte-400 mt-2'>{item.name}</h1>
+                    <p className=' text-lg p-3 text-[#666666] font-light'>{item.description}</p>
+                    <div className='flex gap-4 bg-slate-400'>
+                      <button  onClick={()=> setSelectPj(item.id)}>more info</button>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))
-          }
-        </div>
+                  </div>
+                    <div className='flex justify-between p-4 bg-slate-400 w-full h-[5%] items-center'>
+                      <div className='flex space-x-2'>
+                        <img className='' src="./projects/view.svg" />
+                        <a href={''} className=' font-semibold underline'>Live Preview</a>
+                      </div>
+                      <div className='flex space-x-2'>
+                        <img className='' src="./projects/git.svg" />
+                        <a href={item.link} className=' font-semibold underline'>View Code</a>
+                      </div>
+                    </div>
+                </motion.div>
+              ))
+            }
+          </div> : <div className="w-full mt-10 h-auto">
+            <div className="w-full flex justify-end bg-slate-400">
+              <button onClick={() => setSelectPj(0)}><img src='./projects/cancel.svg'/></button>
+            </div>
+              <div className="w-full flex bg-slate-600">
+                <div className="w-[40%] bg-slate-200">image ..</div>
+                <div className="w-[60%] bg-slate-300"> info ...</div>
+              </div>
+             </div>
+        }
       </div>
     </div>)
 }
