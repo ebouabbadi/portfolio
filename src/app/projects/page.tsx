@@ -75,9 +75,9 @@ export default function Projects() {
                 >
                   <div className="h-full w-full">
                   <div className="h-[45%] rounded-t-xl"><img className='w-full h-full rounded-t-xl' src={item.img} /></div>
-                  <div className="h-[50%] flex flex-col items-center ">
+                  <div className="h-auto flex flex-col items-center overflow-hidden  p-2">
                     <h1 className=' font-medium text-2xl bg-slafte-400 mt-2'>{item.name}</h1>
-                    <p className=' text-lg p-3 text-[#666666] font-light'>{item.description}</p>
+                    <p className=' text-lg flexf line-clamp-5 text-center  text-[#666666] font-light'>{item.description}</p>
                     <div className='flex gap-4 bg-slate-400'>
                       <button  onClick={()=> setSelectPj(item.id)}>more info</button>
                     </div>
@@ -96,13 +96,16 @@ export default function Projects() {
                 </motion.div>
               ))
             }
-          </div> : <div className="w-full mt-10 h-auto">
-            <div className="w-full flex justify-end bg-slate-400">
-              <button onClick={() => setSelectPj(0)}><img src='./projects/cancel.svg'/></button>
+          </div> : <div className="w-full mt-10 h-[400px] bg-[#F8F3F3] shafdow-lg roundedf-xl sfhadow-sky-400">
+            <div className="w-full h-12 flex justify-between items-center  bg-slfate-400">
+              <h1 className='ml-4 text-xl'>Name project</h1>
+              <button className='mr-4' onClick={() => setSelectPj(0)}><img src='./projects/cancel.svg'/></button>
             </div>
-              <div className="w-full flex bg-slate-600">
-                <div className="w-[40%] bg-slate-200">image ..</div>
-                <div className="w-[60%] bg-slate-300"> info ...</div>
+              <div className="w-full h-full flex bg-shlate-600">
+                <div className=" p-4 w-[40%] bgj-slate-200 flex-col flex justify-center items-center">
+                  <img className='w-[300px] h-[300px] rounded-t-xl' src={'./projects/inception.jpg'} />
+                </div>
+                <div className="w-[60%] bjg-slate-300"> info ...</div>
               </div>
              </div>
         }
