@@ -5,20 +5,36 @@ import React from 'react'
 
 const EducationData = [
     {
-        id: 1,
+        filier: 'SOFTWARE ENGINEER',
+        school: '1337 coding school (42 Network)',
+        local: 'Khouribga',
+        date: 'Aug 2021 - Present'
+    },
+    {
         filier: 'PHYSICAL MATTER SCIENCES',
         school: 'Université Sultan Moulay Slimane',
         date: 'Sep 2018 - Sep 2022',
         local: 'Khouribga'
     },
-    {
-        id: 2,
-        filier: 'SOFTWARE ENGINEER',
-        school: '1337 coding school (42 Network)',
-        local: 'Khouribga',
-        date: 'Aug 2021 - Nov 2025'
-    }
 ]
+
+const experienceData = [
+    {
+        post: 'Mobile Developer',
+        company_name: 'L’Atelier Digital - Digital Agency & AI ',
+        date: 'Apr 2024 - Present',
+        local: 'Casablanca, Casablanca-Settat, Morocco · Hybrid',
+        contract_type: 'Internship'
+    },
+    {
+        post: 'Full-stack Developer',
+        company_name: 'Sahih Business',
+        date: 'Mar 2024 - Apr 2024',
+        local: 'Tangier, Tanger-Tetouan-Al Hoceima, Morocco · On-site',
+        contract_type: 'Internship'
+    }, 
+]
+
 
 const certificationsData = [
     {
@@ -63,10 +79,57 @@ export default function About() {
 
             >
                 <div className="flex-col flex gap-10">
-                    <h1 className="  text-[#42446E]  text-5xl font-bold flex justify-center"> About Me</h1>
-                    <p className='text-[#666666] text-xl'>{'I am a full-stack developer deeply passionate about software engineering and personal advancement. With expertise in TypeScript, I specialize in architecting scalable solutions, harnessing React.js and Next.js for frontend experiences. Delving into backend development, I excel in crafting modular architecture with Nest.js and Node.js, fortified by robust.'}</p>
+                    <h1 className="  text-[#42446E]  text-5xl font-bold flex "> About Me</h1>
+                    <p className='text-[#666666] text-xl'>{'I am a full-stack developer deeply passionate about software engineering and personal advancement. With expertise in TypeScript, I specialize in architecting scalable solutions, harnessing React.js, React Native and Next.js for frontend experiences. Delving into backend development, I excel in crafting modular architecture with Nest.js and Node.js, fortified by robust.'}</p>
                 </div>
             </motion.div>
+                        <motion.div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col'
+            
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                duration: 0.3,
+                                ease: [0, 0.71, 0.2, 1.01],
+                                scale: {
+                                    type: "spring",
+                                    damping: 20,
+                                    stiffness: 100,
+                                    restDelta: 0.001
+                                }
+                            }}
+            
+                        >
+                        <h1 className="text-[#42446E]  text-5xl font-bold flex">Work Experience</h1>
+                            {
+                                experienceData.map((item: any, index) => (
+                                    <div key={index} className="flex-col flex gap-14 ">
+                                        <div className='flex justify-between '>
+                                            <div className="flex flex-col gap-4 ">
+                                                <h1 className='text-[#666666] text-3xl'>{item.post}</h1>
+                                                <div className="flex space-x-24 text-[#A7A7A7] font-medium text-xl">
+                                                    <div className='flex space-x-4'>
+                                                        <img src='./about/education.svg' />
+                                                        <h2 className=''>{item.company_name}</h2>
+                                                    </div>
+                                                    <div className='flex space-x-4'>
+                                                        <img src='./about/local.svg' />
+                                                        <h2 className=''>{item.local}</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col h-full items-center bg-slfate-400 gap-4">
+                                                <div className='bg-[#D7FFE0] p-1 w-36 rounded-full text-[#018C0F] flex justify-center items-center font-semibold'>{item.contract_type}</div>
+                                                <div className="flex  h-full space-x-4">
+                                                    <img src='./about/date.svg' />
+                                                    <h2 className='text-[#A7A7A7] font-medium text-xl'>{item.date}</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className=' h-1 bg-[#EBEAED]' />
+                                    </div>
+                                ))
+                            }
+                        </motion.div>
             <motion.div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col'
 
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -83,7 +146,7 @@ export default function About() {
                 }}
 
             >
-                <h1 className="text-[#42446E]  text-5xl font-bold flex justify-center">Education</h1>
+            <h1 className="text-[#42446E]  text-5xl font-bold flex">Education</h1>
                 {
                     EducationData.map((item: any) => (
                         <div key={item.id} className="flex-col flex gap-14 ">
@@ -114,7 +177,7 @@ export default function About() {
                     ))
                 }
             </motion.div>
-            <motion.div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col p-6'
+            {/* <motion.div className='w-[70%]  bg-sflate-100 gap-14 flex flex-col p-6'
 
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -142,7 +205,7 @@ export default function About() {
                         ))
                     }
                 </div>
-            </motion.div>
+            </motion.div> */}
         </div>
     )
 }
