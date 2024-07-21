@@ -5,14 +5,39 @@ import React, { useState } from 'react'
 
 const projectsData = [
   {
-    id: 1,
     name: 'INCEPTION',
+    description: `This is sample project description random things ption random thi ption random things are here in description Thngs are here in description Th ption random things are here in description Th are here in description This is sample project lorem ipsum generator for dummy content`,
+    stack: 'js, ts, nest ...',
+    link: 'https://github.com/ebouabbadi/INCEPTION',
+    preview: './projects/inception.jpg'
+  },
+  {
+    name: 'INCEPTION2',
+    description: `This is sam This is sample project rator for dummy content`,
+    stack: 'js, ts, nest ...',
+    link: 'https://github.com/ebouabbadi/INCEPTION',
+    preview: './projects/inception.jpg'
+  },
+  {
+    name: 'INCEPTION3',
     description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
     stack: 'js, ts, nest ...',
     link: 'https://github.com/ebouabbadi/INCEPTION',
     preview: './projects/inception.jpg'
-
-
+  },
+  {
+    name: 'INCEPTION4',
+    description: `This is tent`,
+    stack: 'js, ts, nest ...',
+    link: 'https://github.com/ebouabbadi/INCEPTION',
+    preview: './projects/inception.jpg'
+  },
+  {
+    name: 'INCEPTION5',
+    description: `This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content`,
+    stack: 'js, ts, nest ...',
+    link: 'https://github.com/ebouabbadi/INCEPTION',
+    preview: './projects/inception.jpg'
   },
 ]
 
@@ -20,7 +45,7 @@ const projectsData = [
 
 export default function Projects() {
 
-  const [selectPj, setSelectPj] = useState(0);
+  const [selectPj, setSelectPj] = useState(null);
 
   return (
     <div className='mt-32 w-full flex flex-col justify-center items-center'>
@@ -30,10 +55,10 @@ export default function Projects() {
           <h2 className='text-[#666666]  text-xl flex'>{`Things I’ve built so far`}</h2>
         </div>
         {
-          !selectPj ? <div className="mt-14 bg-slafte-500 flex-wrap flex w-full h-auto">
+          !selectPj ? <div className="mt-14 bg-slafte-500 gap-5 flex-wrap flex w-full h-auto">
             {
               projectsData.map((item: any) => (
-                <motion.div key={item.id} className='h-[500px] w-80 bg-white shadow-lg shadow-gray-200 rounded-xl flex-col' 
+                <motion.div key={item.id} className='w-80 bg-white shadow-lg shadow-gray-200 rounded-xl flex-col'
 
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -48,31 +73,31 @@ export default function Projects() {
                     }
                   }}
                 >
-                    <div className="h-[45%] rounded-t-xl "><img className='w-full h-full rounded-t-xl' src={item.preview} /></div>
-                    <div className="h-auto flex flex-col items-center overflow-hidden  p-2 bg-slate-200">
-                      <h1 className=' font-medium text-2xl bg-slafte-400 mt-2'>{item.name}</h1>
-                      <p className=' text-lg flexf line-clamp-5 text-center  text-[#666666] font-light'>{item.description}</p>
-                      <div className='flex gap-4 bg-slate-500 w-full justify-center'>
-                        <button onClick={() => setSelectPj(item.id)}>More Info</button>
-                      </div>
-                  <div className='flex justify-between p-4 bg-slate-800 w-full h-[5%] items-center'>
-                    <div className='flex space-x-2'>
-                      <img className='' src="./projects/view.svg" />
-                      <a href={''} className=' font-semibold underline'>Live Preview</a>
+                  <div className="rounded-t-xl "><img className='w-full h-full rounded-t-xl' src={item.preview} /></div>
+                  <div className="flex flex-col items-center overflow-hidden  p-2 bg-slate-00">
+                    <h1 className=' font-medium text-2xl bg-slafte-400 mt-2'>{item.name}</h1>
+                    <p className=' text-lg flexf line-clamp-5 text-center  text-[#666666] font-light'>{item.description}</p>
+                    <div className='flex justify-between p-4 bg-slatde-800 w-full  bg-black items-center'>
+                    <div className='flex gap-4 bgd-slate-500 w-full justify-center'>
+                      <button onClick={() => setSelectPj(item)}>More Info</button>
                     </div>
-                    <div className='flex space-x-2'>
-                      <img className='' src="./projects/git.svg" />
-                      <a href={item.link} className=' font-semibold underline'>View Code</a>
+                      <div className='flex space-x-2'>
+                        <img className='' src="./projects/view.svg" />
+                        <a href={''} className=' font-semibold underline'>Live Preview</a>
+                      </div>
+                      <div className='flex space-x-2'>
+                        <img className='' src="./projects/git.svg" />
+                        <a href={item.link} className=' font-semibold underline'>View Code</a>
+                      </div>
                     </div>
                   </div>
-                    </div>
                 </motion.div>
               ))
             }
           </div> : <div className="w-full mt-10 h-[400px] bg-[#F8F3F3] shafdow-lg roundedf-xl sfhadow-sky-400">
             <div className="w-full h-12 flex justify-between items-center  bg-slfate-400">
-              <h1 className='ml-4 text-xl'>Name project</h1>
-              <button className='mr-4' onClick={() => setSelectPj(0)}><img src='./projects/cancel.svg' /></button>
+              <h1 className='ml-4 text-xl'>Name project{selectPj.name}</h1>
+              <button className='mr-4' onClick={() => setSelectPj(null)}><img src='./projects/cancel.svg' /></button>
             </div>
             <div className="w-full h-full flex bg-shlate-600">
               <div className=" p-4 w-[40%] bgj-slate-200 flex-col flex justify-center items-center">
