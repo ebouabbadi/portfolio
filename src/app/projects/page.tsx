@@ -96,7 +96,7 @@ export default function Projects() {
             }
           </div> : <div className="w-full mt-10 h-[400px] bg-[#F8F3F3] shafdow-lg roundedf-xl sfhadow-sky-400">
             <div className="w-full h-12 flex justify-between items-center  bg-slfate-400">
-              <h1 className='ml-4 text-xl'>Name project{selectPj.name}</h1>
+              <h1 className='ml-4 text-xl'>Name project</h1>
               <button className='mr-4' onClick={() => setSelectPj(null)}><img src='./projects/cancel.svg' /></button>
             </div>
             <div className="w-full h-full flex bg-shlate-600">
