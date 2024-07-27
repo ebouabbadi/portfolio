@@ -41,11 +41,18 @@ const projectsData = [
   },
 ]
 
+interface ProjectType {
+  name: number;
+  description: string;
+  stack: string;
+  link: string;
+  preview: string;
+}
 
 
 export default function Projects() {
 
-  const [selectPj, setSelectPj] = useState(null);
+  const [selectPj, setSelectPj] = useState<ProjectType | null>(null);
 
   return (
     <div className='mt-32 w-full flex flex-col justify-center items-center'>
@@ -58,8 +65,7 @@ export default function Projects() {
           !selectPj ? <div className="mt-14 bg-slafte-500 gap-5 flex-wrap flex w-full h-auto">
             {
               projectsData.map((item: any) => (
-                <motion.div key={item.id} className='w-80 bg-white shadow-lg shadow-gray-200 rounded-xl flex-col'
-
+                <motion.div key={item.id} className='w-80 h-auto bg-white shadow-lg shadow-gray-200 rounded-xl flex-col'
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -76,11 +82,13 @@ export default function Projects() {
                   <div className="rounded-t-xl "><img className='w-full h-full rounded-t-xl' src={item.preview} /></div>
                   <div className="flex flex-col items-center overflow-hidden  p-2 bg-slate-00">
                     <h1 className=' font-medium text-2xl bg-slafte-400 mt-2'>{item.name}</h1>
-                    <p className=' text-lg flexf line-clamp-5 text-center  text-[#666666] font-light'>{item.description}</p>
-                    <div className='flex justify-between p-4 bg-slatde-800 w-full  bg-black items-center'>
-                    <div className='flex gap-4 bgd-slate-500 w-full justify-center'>
-                      <button onClick={() => setSelectPj(item)}>More Info</button>
+                    <div className='h-32'>
+                      <p className=' text-lg flexf line-clamp-4 text-center  text-[#666666] font-light'>{item.description}</p>
+                      <div className='flex gap-4 bgd-slate-500 w-full justify-center'>
+                        <button onClick={() => setSelectPj(item)}>More Info</button>
+                      </div>
                     </div>
+                    <div className='flex justify-between p-4 bg-sdlate-400 w-full h-full bg-bldack items-center'>
                       <div className='flex space-x-2'>
                         <img className='' src="./projects/view.svg" />
                         <a href={''} className=' font-semibold underline'>Live Preview</a>
@@ -94,13 +102,13 @@ export default function Projects() {
                 </motion.div>
               ))
             }
-          </div> : <div className="w-full mt-10 h-[400px] bg-[#F8F3F3] shafdow-lg roundedf-xl sfhadow-sky-400">
-            <div className="w-full h-12 flex justify-between items-center  bg-slfate-400">
-              <h1 className='ml-4 text-xl'>Name project</h1>
-              <button className='mr-4' onClick={() => setSelectPj(null)}><img src='./projects/cancel.svg' /></button>
+          </div> : <div className="w-full mt-10 h-auto bg-[#F8F3F3] shafdow-lg roundedf-xl sfhadow-sky-400">
+            <div className="w-full h-12 flex justify-between items-center  hbg-slate-400">
+              <h1 className='ml-4 text-xl'>Name project {(selectPj.name)}</h1>
+              <button className='mr-4 bg-white rounded-full p-2' onClick={() => setSelectPj(null)}><img src='./projects/cancel.svg' /></button>
             </div>
             <div className="w-full h-full flex bg-shlate-600">
-              <div className=" p-4 w-[40%] bgj-slate-200 flex-col flex justify-center items-center">
+              <div className=" p-4 w-[50%] bgj-slate-200 flex-col flex justify-center items-center">
                 <img className='w-[300px] h-[300px] rounded-t-xl' src={'./projects/inception.jpg'} />
               </div>
               <div className="w-[60%] bjg-slate-300"> info ...</div>
